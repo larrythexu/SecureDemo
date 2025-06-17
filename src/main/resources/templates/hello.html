@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Sup Security!</title>
+    </head>
+    <body>
+        <h1>
+            Sup Security! And hello <span th:remove="tag" sec:authentication="name">default_user</span>!
+        </h1>
+        <!-- Send logout req, Spring Security intercepts and redirects to /login?logout -->
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out">
+        </form>
+    </body>
+</html>
